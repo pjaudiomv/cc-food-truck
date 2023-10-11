@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Plugin Name: Carnes Food Truck
- * Description: A plugin that displays Food Truck Schedule For Carnes Crossroads.
+ * Plugin Name: CC Food Truck
+ * Description: A plugin that displays CC Food Truck Schedule.
  * Version: 1.0
  * Author: pjaudiomv
- * Author URI: https://github.com/pjaudiomv/carnesresidents/
+ * Author URI: https://github.com/pjaudiomv/cc-food-truck/
  */
 
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
