@@ -6,4 +6,5 @@
 vendor/
 logs/
 build/
+node_modules/
 *.zip

@@ -1,8 +1,8 @@
-name: 'pull-request'
+name: "pull-request"
 
 on:
   pull_request:
-    branches: [ 'main' ]
+    branches: ["main"]
 
 jobs:
   lint:
@@ -10,12 +10,17 @@ jobs:
     steps:
       - name: Check out code 🛒
         uses: actions/checkout@v4
-        id: code-checkout
 
-      - name: Validate composer.json and composer.lock 🎼
-        id: composer-validate
-        run: composer validate
+      - name: Setup PHP 🐫
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
 
-      - name: PHPCS checker 🧹
-        id: php-codesniffer
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Linter 🧹
+        id: linter
         run: make lint

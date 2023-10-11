@@ -2,7 +2,7 @@
   "name": "pjaudiomv/cc-food-truck",
   "description": "This is a WordPress plugin for Carnes Residents Food Trucks.",
   "type": "project",
-  "license": "MIT",
+  "license": "GPL-2.0-only",
   "authors": [
     {
       "name": "pjaudiomv"

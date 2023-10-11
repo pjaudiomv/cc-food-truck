@@ -30,7 +30,8 @@ class Settings
         );
     }
 
-    function settingsLink($links) {
+    public function settingsLink($links)
+    {
         $settings_url = admin_url('options-general.php?page=food-truck');
         $links[] = "<a href='{$settings_url}'>Settings</a>";
         return $links;

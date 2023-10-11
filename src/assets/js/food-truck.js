@@ -134,16 +134,18 @@ const displayEventsByMonth = (events) => {
   });
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   if (foodTruckParams.EVENTS) {
-    console.log("Loaded data server side")
-    const events = convertSheetDataToListOfDicts(JSON.parse(foodTruckParams.EVENTS))
+    console.log("Loaded data server side");
+    const events = convertSheetDataToListOfDicts(
+      JSON.parse(foodTruckParams.EVENTS)
+    );
     displayEventsByMonth(events);
   } else {
     fetch(CONFIG.URL)
       .then((response) => response.json())
       .then((data) => {
-        console.log("Loaded data client side")
+        console.log("Loaded data client side");
         const events = convertSheetDataToListOfDicts(data);
         displayEventsByMonth(events);
       })
