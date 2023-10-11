@@ -1,8 +1,8 @@
-name: 'release'
+name: "release"
 
 on:
   push:
-    tags: [ '*' ]
+    tags: ["*"]
 
 jobs:
   lint:
@@ -16,8 +16,13 @@ jobs:
         with:
           php-version: 8.2
 
-      - name: PHPCS checker 🧹
-        id: php-codesniffer
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Linter 🧹
+        id: linter
         run: make lint
 
   package:
@@ -28,7 +33,7 @@ jobs:
       GITHUB_RELEASE_FILENAME: "cc-food-truck.zip"
       PLUGIN: "cc-food-truck"
       MAINFILE: "cc-food-truck.php"
-    needs: [ lint ]
+    needs: [lint]
     steps:
       - name: Check out code 🛒
         uses: actions/checkout@v4

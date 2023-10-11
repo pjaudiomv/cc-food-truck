@@ -6,6 +6,10 @@ composer.lock export-ignore
 Dockerfile export-ignore
 docker-compose.yml export-ignore
 Makefile export-ignore
-/docs export-ignore
-/.github export-ignore
 .phpcs.xml export-ignore
+package-lock.json export-ignore
+package.json export-ignore
+/docs export-ignore
+/build export-ignore
+/node_modules export-ignore
+/.github export-ignore
