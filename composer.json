@@ -1,0 +1,14 @@
+{
+  "name": "pjaudiomv/cc-food-truck",
+  "description": "This is a WordPress plugin for Carnes Residents Food Trucks.",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "pjaudiomv"
+    }
+  ],
+  "require-dev": {
+    "squizlabs/php_codesniffer": "3.*"
+  }
+}
