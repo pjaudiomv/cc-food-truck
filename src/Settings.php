@@ -8,7 +8,6 @@ class Settings
     {
         add_action('admin_init', [$this, 'registerSettings']);
         add_action('admin_menu', [$this, 'createMenu']);
-        add_filter('plugin_action_links_cc-food-truck/cc-food-truck.php', [$this, 'settingsLink']);
     }
 
     public function registerSettings(): void
@@ -19,7 +18,7 @@ class Settings
         register_setting('food-truck-group', 'food_truck_checkbox');
     }
 
-    public function createMenu(): void
+    public function createMenu(string $baseFile): void
     {
         add_options_page(
             esc_html__('Food Truck Settings'), // Page Title
@@ -28,6 +27,7 @@ class Settings
             'food-truck',                      // Menu Slug
             [$this, 'drawSettings']            // Callback function to display the page content
         );
+        add_filter('plugin_action_links_' . $baseFile, [$this, 'settingsLink']);
     }
 
     public function settingsLink($links)
