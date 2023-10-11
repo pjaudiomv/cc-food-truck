@@ -8,6 +8,7 @@ class Settings
     {
         add_action('admin_init', [$this, 'registerSettings']);
         add_action('admin_menu', [$this, 'createMenu']);
+        add_filter('plugin_action_links_cc-food-truck/cc-food-truck.php', [$this, 'settingsLink']);
     }
 
     public function registerSettings(): void
@@ -27,6 +28,12 @@ class Settings
             'food-truck',                      // Menu Slug
             [$this, 'drawSettings']            // Callback function to display the page content
         );
+    }
+
+    function settingsLink($links) {
+        $settings_url = admin_url('options-general.php?page=food-truck');
+        $links[] = "<a href='{$settings_url}'>Settings</a>";
+        return $links;
     }
 
     public function drawSettings(): void
