@@ -34,6 +34,8 @@ jobs:
       PLUGIN: "cc-food-truck"
       MAINFILE: "cc-food-truck.php"
     needs: [lint]
+    permissions:
+      contents: write
     steps:
       - name: Check out code 🛒
         uses: actions/checkout@v4
