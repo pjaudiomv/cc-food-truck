@@ -26,6 +26,9 @@ use FoodTruck\Events;
 class FoodTruckPlugin
 {
     // phpcs:enable PSR1.Classes.ClassDeclaration.MissingNamespace
+
+    private static $instance = null;
+
     public function __construct()
     {
         add_action('admin_menu', [$this, 'optionsMenu']);
@@ -36,7 +39,7 @@ class FoodTruckPlugin
     public function optionsMenu()
     {
         $dashboard = new Settings();
-        $dashboard->createMenu();
+        $dashboard->createMenu(plugin_basename(__FILE__));
     }
 
     public function events($atts)
@@ -57,6 +60,18 @@ class FoodTruckPlugin
             'EVENTS' => $event->optionalGetEvents()
         ]);
     }
+
+    public static function getInstance()
+    {
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
 }
 
-$foodTruckPlugin = new FoodTruckPlugin();
+function initializeFoodTruckPlugin()
+{
+    FoodTruckPlugin::getInstance();
+}
+add_action('plugins_loaded', 'initializeFoodTruckPlugin');

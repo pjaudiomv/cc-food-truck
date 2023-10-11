@@ -1,22 +1,13 @@
-.food-truck-container ol.circle-bullets {
+#food-truck-container ol.circle-bullets {
   list-style-type: none;
 }
 
-.food-truck-container ol.circle-bullets-inner {
-  list-style-type: none;
+#food-truck-container ol.circle-bullets-inner {
+  list-style-type: disc;
   padding-left: 2em;
+  padding-bottom: 1em;
 }
 
-ol {
-  list-style-type: none;
-}
-
-.food-truck-container ol {
-  list-style-type: none;
-  padding-left: 2em;
-}
-
-div#food-truck-container ol.circle-bullets {
-  list-style-type: none;
-  padding-left: 2em;
+#food-truck-container h2 {
+  line-height: 1em;
 }
