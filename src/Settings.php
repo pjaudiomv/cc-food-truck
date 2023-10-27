@@ -16,6 +16,7 @@ class Settings
         register_setting('food-truck-group', 'food_truck_sheet_name', 'sanitize_text_field');
         register_setting('food-truck-group', 'food_truck_google_api_key', 'sanitize_text_field');
         register_setting('food-truck-group', 'food_truck_checkbox');
+        register_setting('food-truck-group', 'food_truck_passed_events_checkbox');
     }
 
     public function createMenu(string $baseFile): void
@@ -70,6 +71,13 @@ class Settings
                         <td>
                             <input type="checkbox" name="food_truck_checkbox" value="1" <?php checked(1, get_option('food_truck_checkbox'), true); ?> />
                             <label for="food_truck_checkbox">This will load the data server side and pass to the client. (Defaults to Client Side for faster loading)</label>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">Show past events</th>
+                        <td>
+                            <input type="checkbox" name="food_truck_passed_events_checkbox" value="1" <?php checked(1, get_option('food_truck_passed_events_checkbox'), true); ?> />
+                            <label for="food_truck_passed_events_checkbox">This will show past events. (Defaults to not displaying them.)</label>
                         </td>
                     </tr>
                 </table>

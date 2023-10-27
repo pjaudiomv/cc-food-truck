@@ -57,6 +57,7 @@ class FoodTruckPlugin
             'SHEET_ID' => esc_js(get_option('food_truck_sheet_id')),
             'SHEET_NAME' => esc_js(get_option('food_truck_sheet_name')),
             'API_KEY' => esc_js(get_option('food_truck_google_api_key')),
+            'SHOW_PASSED_EVENTS' => get_option('food_truck_passed_events_checkbox'),
             'EVENTS' => $event->optionalGetEvents()
         ]);
     }
