@@ -7,6 +7,8 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+**CC Food Truck** is a plugin designed to fetch food truck data from a Google Spreadsheet and display it on your website.
+
 == Description ==
 
 **CC Food Truck** is a plugin designed to fetch food truck data from a Google Spreadsheet and display it on your website.
