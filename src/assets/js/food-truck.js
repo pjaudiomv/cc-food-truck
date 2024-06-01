@@ -94,6 +94,11 @@ const displayEventsByMonth = (events) => {
 
   const eventGroups = document.getElementById("food-truck-container");
 
+  if (Object.keys(groupedEvents).length === 0) {
+    eventGroups.textContent = "No upcoming events";
+    return;
+  }
+
   Object.keys(groupedEvents).forEach((monthYearKey) => {
     const [month, , year] = monthYearKey.split(" ");
     const monthDiv = document.createElement("div");
